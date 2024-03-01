@@ -9,16 +9,12 @@ app.use(express.json())
 app.use(indexRoutes)
 app.use('/api', empleadoRoutes)
 
-app.use((req, res, next)=>{
-    res.append('Access-Control-Allow-Origin', ['*']); // Permitir solicitudes desde cualquier origen
-    res.append('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Métodos permitidos
-    res.append('Access-Control-Allow-Headers', 'Content-Type'); // Encabezados permitidos
-    
-    // res.status(404).json({
-    //     message: "endpoint not found"
-    // })
+app.use(cors())
 
-    next();
+app.use((req, res, next)=>{    
+    res.status(404).json({
+        message: "endpoint not found"
+    })
 })
 
 export default app
