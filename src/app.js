@@ -14,9 +14,9 @@ app.use((req, res, next)=>{
     res.append('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Métodos permitidos
     res.append('Access-Control-Allow-Headers', 'Content-Type'); // Encabezados permitidos
     
-    res.status(404).json({
-        message: "endpoint not found"
-    })
+    // res.status(404).json({
+    //     message: "endpoint not found"
+    // })
 
     next();
 })
