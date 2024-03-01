@@ -10,9 +10,9 @@ app.use(indexRoutes)
 app.use('/api', empleadoRoutes)
 
 app.use((req, res, next)=>{
-    res.header('Access-Control-Allow-Origin', '*'); // Permitir solicitudes desde cualquier origen
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Métodos permitidos
-    res.header('Access-Control-Allow-Headers', 'Content-Type'); // Encabezados permitidos
+    res.append('Access-Control-Allow-Origin', ['*']); // Permitir solicitudes desde cualquier origen
+    res.append('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Métodos permitidos
+    res.append('Access-Control-Allow-Headers', 'Content-Type'); // Encabezados permitidos
     
     res.status(404).json({
         message: "endpoint not found"
