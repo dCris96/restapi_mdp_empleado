@@ -1,6 +1,7 @@
 import express from 'express'
 import empleadoRoutes from './routes/empleado.routes.js'
 import indexRoutes from './routes/index.routes.js'
+import cors from 'cors'
 
 const app = express()
 
